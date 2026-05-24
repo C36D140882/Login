@@ -81,22 +81,22 @@ api.interceptors.response.use(
 
 export const authService = {
   register: (userData: RegisterData): Promise<AxiosResponse<AuthResponse>> => 
-    api.post<AuthResponse>('/register/', userData),
+    api.post<AuthResponse>('register/', userData),
   
   login: (credentials: LoginCredentials): Promise<AxiosResponse<AuthResponse>> => 
-    api.post<AuthResponse>('/login/', credentials),
+    api.post<AuthResponse>('login/', credentials),
   
   logout: (refreshToken: string): Promise<AxiosResponse<{ message: string }>> => 
-    api.post<{ message: string }>('/logout/', { refresh: refreshToken }),
+    api.post<{ message: string }>('logout/', { refresh: refreshToken }),
   
   getProfile: (): Promise<AxiosResponse<Profile>> => 
-    api.get<Profile>('/profile/'),
+    api.get<Profile>('profile/'),
   
   updateProfile: (profileData: Partial<Profile>): Promise<AxiosResponse<Profile>> => 
-    api.put<Profile>('/profile/', profileData),
+    api.put<Profile>('profile/', profileData),
   
   changePassword: (passwordData: { old_password: string; new_password: string; confirm_new_password: string }): Promise<AxiosResponse<{ message: string }>> => 
-    api.post<{ message: string }>('/change-password/', passwordData),
+    api.post<{ message: string }>('change-password/', passwordData),
 };
 
 export default api;

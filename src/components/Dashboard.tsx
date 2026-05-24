@@ -93,7 +93,7 @@ const Dashboard: React.FC = () => {
   const fetchProfile = useCallback(async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${API_BASE}/profile/`, {
+      const response = await fetch(`${API_BASE}profile/`, {
         headers: getHeaders(),
       });
 
@@ -134,7 +134,7 @@ const Dashboard: React.FC = () => {
     setSuccess("");
 
     try {
-      const response = await fetch(`${API_BASE}/profile/`, {
+      const response = await fetch(`${API_BASE}profile/`, {
         method: "PUT",
         headers: getHeaders(),
         body: JSON.stringify(formData),
@@ -160,7 +160,7 @@ const Dashboard: React.FC = () => {
     try {
       const refreshToken = localStorage.getItem("refresh_token") || sessionStorage.getItem("refresh_token");
       if (refreshToken) {
-        await fetch(`${API_BASE}/logout/`, {
+        await fetch(`${API_BASE}logout/`, {
           method: "POST",
           headers: getHeaders(),
           body: JSON.stringify({ refresh: refreshToken }),
