@@ -29,7 +29,7 @@ import {
   BadgeOutlined,
 } from "@mui/icons-material";
 
-const API_BASE = "http://localhost:8000/api";
+const API_BASE = "https://loginbackend-hjlb.onrender.com/api/";
 
 interface RegisterFormData {
   username: string;

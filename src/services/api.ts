@@ -6,7 +6,7 @@ import {
   Profile, 
 } from '../types';
 
-const API_BASE ='http://localhost:8000/api';
+const API_BASE ='https://loginbackend-hjlb.onrender.com/api/';
 
 // Extend InternalAxiosRequestConfig to include _retry property
 interface CustomAxiosRequestConfig extends InternalAxiosRequestConfig {
