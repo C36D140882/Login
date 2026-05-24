@@ -29,7 +29,7 @@ import {
   BadgeOutlined,
 } from "@mui/icons-material";
 
-const API_BASE = "https://loginbackend-hjlb.onrender.com/api/";
+const API_BASE = "https://loginbackend-hjlb.onrender.com/api";
 
 interface RegisterFormData {
   username: string;
@@ -138,7 +138,7 @@ const Register: React.FC = () => {
     setGeneralError("");
 
     try {
-      const response = await fetch(`${API_BASE}register/`, {
+      const response = await fetch(`${API_BASE}/register/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
