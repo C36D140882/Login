@@ -90,8 +90,7 @@ const Dashboard: React.FC = () => {
     address: "",
   });
 
-
-  const fetchProfile =  useCallback(async () => {
+  const fetchProfile = useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch(`${API_BASE}/profile/`, {
@@ -123,10 +122,11 @@ const Dashboard: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  },[]);
+  }, [navigate]);
+
   useEffect(() => {
-  fetchProfile();
-}, [fetchProfile]);
+    fetchProfile();
+  }, [fetchProfile]);
 
   const handleUpdateProfile = async () => {
     setUpdating(true);
@@ -430,7 +430,7 @@ const Dashboard: React.FC = () => {
                       </Typography>
                       <Stack 
                         direction={isMobile ? "column" : "row"} 
- spacing={1} 
+                        spacing={1} 
                         alignItems={isMobile ? "center" : "center"}
                         sx={{ mb: 1 }}
                       >
@@ -705,7 +705,6 @@ const Dashboard: React.FC = () => {
                   )}
                 </Card>
               </Slide>
-
             </Box>
           </Card>
         </Zoom>
